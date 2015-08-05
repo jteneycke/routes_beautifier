@@ -1,36 +1,32 @@
+# coding: utf-8
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'color_routes/version'
 
-Gem::Specification.new do |s|
-  s.specification_version = 2 if s.respond_to? :specification_version=
-  s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.rubygems_version = '1.3.5'
+Gem::Specification.new do |spec|
+  spec.name          = "color_routes"
+  spec.version       = ColorRoutes::VERSION
+  spec.authors       = ["Josh Tate"]
+  spec.email         = ["joshtate04@me.com"]
 
-  s.name              = 'color_routes'
-  s.version           = '1.0.0'
-  s.date              = '2012-10-23'
-  s.rubyforge_project = 'color_routes'
+  spec.summary       = "Colorize your Rails routes"
+  spec.description   = "Colorize your Rails routes"
+  spec.homepage      = "http://github.com/joshtate04/color_routes"
+  spec.license       = "MIT"
 
-  s.summary     = "Colorize rake routes output for rails."
-  s.description = "Colorize rake routes output for rails."
+  # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
+  # delete this section to allow pushing this gem to any host.
+  if spec.respond_to?(:metadata)
+    spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com'"
+  else
+    raise "RubyGems 2.0 or newer is required to protect against public gem pushes."
+  end
 
-  s.authors  = ["Nicolas Oga"]
-  s.email    = '2112.oga@gmail.com'
-  s.homepage = 'http://nicooga.github.com/NAME'
+  spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
+  spec.bindir        = "exe"
+  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  spec.require_paths = ["lib"]
 
-  s.require_paths = %w[lib]
-
-  s.rdoc_options = ["--charset=UTF-8"]
-  s.extra_rdoc_files = %w[README.md LICENSE doc/demo1.png doc/demo2.png]
-
-  # = MANIFEST =
-  s.files = %w[
-    LICENSE
-    README.md
-    Rakefile
-    color_routes.gemspec
-    doc/demo1.png
-    doc/demo2.png
-    lib/color_routes.rb
-    lib/color_routes/rails/tasks/color_routes.rake
-  ]
-  # = MANIFEST =
+  spec.add_development_dependency "bundler", "~> 1.10"
+  spec.add_development_dependency "rake", "~> 10.0"
 end
