@@ -34,7 +34,7 @@ task :color_routes => :environment do
             # PATHS
             path = route.path.spec.to_s.ljust(max_widths[:paths]).gsub("(.:format)","")
             if path.rstrip == "/"
-                print "/#{1...(max_widths[:paths] - 1).to_a.map{|s| " "}.join}"
+                print "/#{Array(1...(max_widths[:paths] - 1)).map{|s| " "}.join}"
             else
                 print "#{path.split('/').map{|p| p.light_yellow}.join('/'.red)}"
             end
