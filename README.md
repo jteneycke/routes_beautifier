@@ -3,13 +3,13 @@ ColorizedRoutes
 [![Gem Version](https://badge.fury.io/rb/colorized_routes.svg)](http://badge.fury.io/rb/colorized_routes)
 # DESCRIPTION
 
-ColorizedRoutes is just a little library bundled with the necessary code to turn the output of the rake routes command from the usable$
+ColorizedRoutes is a small library to make the rake routes command more readable.
+
+Enjoy!
 
 Based on the work at: https://github.com/nicooga/color_routes
 
 SUPPORTED VERSIONS: 4.x
-
-Enjoy!
 
 # INSTALLATION
 ```bash
