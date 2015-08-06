@@ -25,9 +25,9 @@ then run
 bundle
 ```
 
-run this to get your colorized routes
+run the routes rake task to get your colorized routes
 ```bash
-rake colorized_routes
+rake routes
 ```
 
 # DEMO
@@ -35,5 +35,5 @@ rake colorized_routes
 ####rake routes normal output: 
 <img src="https://imgur.com/BeKHDbB.png" title="Example output" alt="Example output" />
 
-####rake colorized_routes output:
+####colorized rake routes output:
 <img src="https://imgur.com/xlpTPtB.png" title="Example output" alt="Example output" />
