@@ -27,7 +27,7 @@ bundle
 # DEMO
 
 rake routes normal output: 
-<img src="https://imgur.com/BeKHDbB" title="Example output" alt="Example output" />
+<img src="https://imgur.com/BeKHDbB.png" title="Example output" alt="Example output" />
 
 rake color_routes output:
-<img src="https://imgur.com/xlpTPtB" title="Example output" alt="Example output" />
+<img src="https://imgur.com/xlpTPtB.png" title="Example output" alt="Example output" />
