@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["joshtate04@me.com"]
 
   spec.summary       = "Colorize your Rails routes"
-  spec.description   = "Colorize your Rails routes grouped by controller"
+  spec.description   = "Throw some color into your rake routes task. Makes your routes more readable and better organized."
   spec.homepage      = "http://github.com/joshtate04/colorized_routes"
   spec.license       = "MIT"
 
