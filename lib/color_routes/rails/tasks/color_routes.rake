@@ -23,17 +23,18 @@ task :color_routes => :environment do
     controllers: (all_routes.map { |route| route.defaults[:controller].to_s.length }.max),
     actions: (all_routes.map { |route| route.defaults[:action].to_s.length }.max)
   }
+  puts "#{max_widths.inspect}".yellow
 
     all_routes.group_by {|route| route.defaults[:controller]}.each_value do |group|
         print "Controller: ".light_white
         puts "#{group.first.defaults[:controller].to_s}".cyan
         group.each do |route|
             # VERBS (GET/POST/DELETE/PATCH/ETC)
-            print "  #{route.verb.inspect.gsub(/^.{2}|.{2}$/, "").center(max_widths[:verbs])}".light_red
+            print "#{route.verb.inspect.gsub(/^.{2}|.{2}$/, "").center(max_widths[:verbs])}".light_red
             print " | ".light_white
             # PATHS
             path = route.path.spec.to_s.gsub("(.:format)","")
-            print "#{path.ljust(max_widths[:names]).split('/').map{|p| p.light_yellow}.join('/'.red)}"
+            print "#{path.ljust(max_widths[:paths]).split('/').map{|p| p.light_yellow}.join('/'.red)}"
 
             print " | ".light_white
 
