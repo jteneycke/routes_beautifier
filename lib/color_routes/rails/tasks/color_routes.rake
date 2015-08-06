@@ -27,6 +27,10 @@ task :color_routes => :environment do
     all_routes.group_by {|route| route.defaults[:controller]}.each_value do |group|
         print "Controller: ".light_white
         puts "#{group.first.defaults[:controller].to_s}".cyan
+        print "  #{route.verb.inspect.gsub(/^.{2}|.{2}$/, "").center(max_widths[:verbs])}".light_red
+        print " | ".light_white
+
+        puts ""
     end
 
   #all_routes.group_by { |route| route.defaults[:controller] }.each_value do |group|
