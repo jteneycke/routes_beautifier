@@ -5,7 +5,7 @@ ColorizedRoutes
 
 ColorizedRoutes is just a little library bundled with the necessary code to turn the output of the rake routes command from the usable$
 
-Based on the work at: https://github.com/nicooga/colorized_routes
+Based on the work at: https://github.com/nicooga/color_routes
 
 SUPPORTED VERSIONS: 4.x
 
