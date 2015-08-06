@@ -46,6 +46,7 @@ task :color_routes => :environment do
 
             # CONTROLLER ACTIONS
             print "#{route.name.to_s.ljust(max_widths[:names])}".light_blue
+            print " | #{path.size}".light_white
             puts ""
         end
 
