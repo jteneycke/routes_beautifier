@@ -16,7 +16,8 @@ task :routes do
   }
 
   all_routes.group_by {|route| route.defaults[:controller]}.each_value do |group|
-    puts "#{group.first.defaults[:controller].to_s}".colorize(color: :white).colorize(background: :blue)
+    print "Controller: ".light_white
+    puts "#{group.first.defaults[:controller].to_s}".colorize(color: :light_white).colorize(background: :blue).colorize(mode: :bold)
     group.each do |route|
       # VERBS (GET/POST/DELETE/PATCH/ETC)
       print "#{route.verb.inspect.gsub(/^.{2}|.{2}$/, "").center(max_widths[:verbs])}".light_red
