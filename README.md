@@ -36,4 +36,4 @@ rake routes
 <img src="https://imgur.com/BeKHDbB.png" title="Example output" alt="Example output" />
 
 ####colorized rake routes output:
-<img src="https://imgur.com/xlpTPtB.png" title="Example output" alt="Example output" />
+<img src="https://imgur.com/T7Aw1kA.png" title="Example output" alt="Example output" />
