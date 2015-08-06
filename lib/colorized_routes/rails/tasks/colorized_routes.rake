@@ -1,12 +1,20 @@
 desc 'Makes routes a little more pretty.'
 
 task :routes do
+  puts  "                                                              ".white.on_green
+  puts  "                       COLORIZED ROUTES                       ".white.on_green
+  puts  "    github: https://github.com/joshtate04/colorized_routes    ".white.on_green
+  puts  "                                                              ".white.on_green
+  print "                        Loading routes                        ".white.on_green.blink
+
+
   Rake::Task['routes'].clear
   Rails.application.reload_routes!
   all_routes = Rails.application.routes.routes.to_a
   all_routes.reject! { |route| route.verb.nil? || route.path.spec.to_s == '/assets' }
   all_routes.select! { |route| ENV['CONTROLLER'].nil? || route.defaults[:controller].to_s == ENV['CONTROLLER'] }
-
+  print "\r"
+  puts "                                                              ".black.on_black
   max_widths = {
       names: (all_routes.map { |route| route.name.to_s.length }.max),
       verbs: (6),
