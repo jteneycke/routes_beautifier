@@ -3,7 +3,7 @@ module ColorRoutes
         railtie_name :color_routes
 
         rake_tasks do
-          load "tasks/color_routes.rake"
+          load "#{ColorRoutes.root}/tasks/color_routes.rake"
         end
     end
 end
