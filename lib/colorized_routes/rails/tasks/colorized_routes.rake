@@ -17,19 +17,19 @@ task :routes do
 
   all_routes.group_by {|route| route.defaults[:controller]}.each_value do |group|
     print "Controller: ".light_white
-    puts "#{group.first.defaults[:controller].to_s}".colorize(color: :light_white).colorize(background: :blue).colorize(mode: :bold)
+    puts " #{group.first.defaults[:controller].to_s} ".colorize(color: :light_white).colorize(background: :blue).colorize(mode: :bold)
     group.each do |route|
       # VERBS (GET/POST/DELETE/PATCH/ETC)
       print "#{route.verb.inspect.gsub(/^.{2}|.{2}$/, "").center(max_widths[:verbs])}".light_red
       print " | ".light_white
       # PATHS
       path = route.path.spec.to_s.gsub("(.:format)","")
-      print "#{path.ljust(max_widths[:paths]).split('/').map{|p| p.light_yellow}.join('/'.red)}"
+      print "#{path.ljust(max_widths[:paths]).split('/').map{|p| p.light_blue}.join('/'.green)}"
 
       print " | ".light_white
 
       # PATH NAMES
-      print "#{route.name.to_s.ljust(max_widths[:names])}".light_blue
+      print "#{route.name.to_s.ljust(max_widths[:names])}".yellow
       print " | ".light_white
 
       # CONTROLLER ACTIONS
