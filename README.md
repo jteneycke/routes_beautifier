@@ -1,6 +1,6 @@
 ColorizedRoutes
 ===========
-
+[![Gem Version](https://badge.fury.io/rb/colorized_routes.svg)](http://badge.fury.io/rb/colorized_routes)
 # DESCRIPTION
 
 ColorizedRoutes is just a little library bundled with the necessary code to turn the output of the rake routes command from the usable but dull white and black screen to something more vivid and, more important, readable.
