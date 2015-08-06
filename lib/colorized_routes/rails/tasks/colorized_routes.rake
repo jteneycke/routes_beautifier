@@ -14,11 +14,9 @@ task :routes do
       controllers: (all_routes.map { |route| route.defaults[:controller].to_s.length }.max),
       actions: (all_routes.map { |route| route.defaults[:action].to_s.length }.max)
   }
-  puts "#{max_widths.inspect}".yellow
 
   all_routes.group_by {|route| route.defaults[:controller]}.each_value do |group|
-    print "Controller: ".light_white
-    puts "#{group.first.defaults[:controller].to_s}".cyan
+    puts "#{group.first.defaults[:controller].to_s}".colorize(color: :white).colorize(background: :white)
     group.each do |route|
       # VERBS (GET/POST/DELETE/PATCH/ETC)
       print "#{route.verb.inspect.gsub(/^.{2}|.{2}$/, "").center(max_widths[:verbs])}".light_red
