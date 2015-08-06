@@ -1,12 +1,10 @@
 desc 'Makes routes a little more pretty.'
 
 task :routes do
-  puts  "                                                              ".black.on_green
-  puts  "                       COLORIZED ROUTES                       ".black.on_green.bold
-  puts  "    github: https://github.com/joshtate04/colorized_routes    ".black.on_green
-  puts  "                                                              ".black.on_green
-  print "                        Loading routes                        ".black.on_green.blink
-  sleep 4
+  puts  "                                                              ".light_white.on_blue
+  puts  "                       COLORIZED ROUTES                       ".light_white.on_blue
+  puts  "    github: https://github.com/joshtate04/colorized_routes    ".light_white.on_blue
+  puts  "                                                              ".light_white.on_blue
 
 
   Rake::Task['routes'].clear
