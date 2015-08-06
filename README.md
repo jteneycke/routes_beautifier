@@ -13,15 +13,21 @@ Enjoy!
 
 # INSTALLATION
 ```bash
-gem install color_routes
+gem install color_routes -v '2.0.0'
 ```
 or
 ```ruby
 # In your Gemfile
 gem 'color_routes', '~> 2.0.0'
 ```
+then run
 ```bash
 bundle
+```
+
+run this to get your colorized routes
+```bash
+rake color_routes
 ```
 
 # DEMO
