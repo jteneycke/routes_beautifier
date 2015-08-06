@@ -1,6 +1,6 @@
 desc 'Makes routes a little more pretty.'
 
-task :color_routes => :environment do
+task :colorized_routes => :environment do
 
   Rails.application.reload_routes!
   all_routes = Rails.application.routes.routes.to_a

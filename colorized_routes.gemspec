@@ -1,17 +1,17 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'color_routes/version'
+require 'colorized_routes/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "color_routes"
-  spec.version       = ColorRoutes::VERSION
+  spec.name          = "colorized_routes"
+  spec.version       = ColorizedRoutes::VERSION
   spec.authors       = ["Josh Tate"]
   spec.email         = ["joshtate04@me.com"]
 
   spec.summary       = "Colorize your Rails routes"
   spec.description   = "Colorize your Rails routes grouped by controller"
-  spec.homepage      = "http://github.com/joshtate04/color_routes"
+  spec.homepage      = "http://github.com/joshtate04/colorized_routes"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
