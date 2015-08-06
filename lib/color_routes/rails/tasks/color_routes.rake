@@ -26,6 +26,9 @@ task :color_routes => :environment do
 
     all_routes.group_by {|route| route.defaults[:controller]}.each_value do |group|
         print "Controller: ".light_white
+        puts "MAXES =>".green
+        puts "#{max_widths.inspect}".yellow
+        puts ""
         puts "#{group.first.defaults[:controller].to_s}".cyan
         group.each do |route|
             # VERBS (GET/POST/DELETE/PATCH/ETC)
