@@ -1,13 +1,4 @@
-desc 'Pretty version on rails rake routes.'
-
-EMK="\033[1;30m"
-EMR="\033[1;31m"
-EMY="\033[1;33m"
-EMB="\033[1;34m"
-EMM="\033[1;35m"
-EMC="\033[1;36m"
-EMW="\033[1;37m"
-NOCOLOR = "\033[0m"
+desc 'Makes routes a little more pretty.'
 
 task :color_routes => :environment do
 
@@ -50,16 +41,4 @@ task :color_routes => :environment do
 
         puts ""
     end
-
-  #all_routes.group_by { |route| route.defaults[:controller] }.each_value do |group|
-#    puts EMK + "\nCONTROLLER: " + EMW + group.first.defaults[:controller].to_s + NOCOLOR
-
-#      name = EMC + route.name.to_s.rjust(max_widths[:names]) + NOCOLOR
-#      verb = EMY + route.verb.inspect.gsub(/^.{2}|.{2}$/, "").center(max_widths[:verbs]) + NOCOLOR
-#      path = EMR + route.path.spec.to_s.ljust(max_widths[:paths]).gsub(/\.?:\w+/){|s|EMB + s + EMR} + NOCOLOR
-#      action = EMW + route.defaults[:action].to_s.ljust(max_widths[:actions]) + NOCOLOR
-#
-#      puts "#{name} | #{verb} | #{path} | #{action}"
-#    end
-#  end
 end
