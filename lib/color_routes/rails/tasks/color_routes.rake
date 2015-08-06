@@ -35,9 +35,9 @@ task :color_routes => :environment do
             print "  #{route.verb.inspect.gsub(/^.{2}|.{2}$/, "").center(max_widths[:verbs])}".light_red
             print " | ".light_white
             # PATHS
-            path = route.path.spec.to_s.ljust(max_widths[:paths],"_").gsub("(.:format)","")
+            path = route.path.spec.to_s.gsub("(.:format)","")
             if path.rstrip == "/"
-                print "/#{Array(1...(max_widths[:paths] - 1)).map{|s| " "}.join}".red
+                print "/#{Array(1...(max_widths[:paths] - 1)).map{|s| "_"}.join}".red
             else
                 print "#{path.split('/').map{|p| p.light_yellow}.join('/'.red)}"
             end
