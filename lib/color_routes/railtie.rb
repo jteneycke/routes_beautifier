@@ -1,7 +1,9 @@
 module ColorRoutes
     class Railtie < Rails::Railtie
+        railtie_name :color_routes
+
         rake_tasks do
-            require '../color_routes.task'
+          load "tasks/color_routes.task"
         end
     end
 end
