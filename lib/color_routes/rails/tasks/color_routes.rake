@@ -28,11 +28,17 @@ task :color_routes => :environment do
         print "Controller: ".light_white
         puts "#{group.first.defaults[:controller].to_s}".cyan
         group.each do |route|
+            # VERBS (GET/POST/DELETE/PATCH/ETC)
             print "  #{route.verb.inspect.gsub(/^.{2}|.{2}$/, "").center(max_widths[:verbs])}".light_red
             print " | ".light_white
+
+            # CONTROLLER ACTIONS
+            print "#{route.name.to_s.rjust(max_widths[:names])}".green
+            print " | ".light_white
+
+            # PATHS
             path = route.path.spec.to_s.ljust(max_widths[:paths]).gsub("(.:format)","")
             print "#{path.split('/').map{|p| p.light_yellow}.join('/'.red)}"
-            print " | ".light_white
             puts ""
         end
 
