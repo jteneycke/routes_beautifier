@@ -24,15 +24,20 @@ task :color_routes => :environment do
     actions: (all_routes.map { |route| route.defaults[:action].to_s.length }.max)
   }
 
-  all_routes.group_by { |route| route.defaults[:controller] }.each_value do |group|
-    puts EMK + "\nCONTROLLER: " + EMW + group.first.defaults[:controller].to_s + NOCOLOR
-    group.each do |route|
-      name = EMC + route.name.to_s.rjust(max_widths[:names]) + NOCOLOR
-      verb = EMY + route.verb.inspect.gsub(/^.{2}|.{2}$/, "").center(max_widths[:verbs]) + NOCOLOR
-      path = EMR + route.path.spec.to_s.ljust(max_widths[:paths]).gsub(/\.?:\w+/){|s|EMB + s + EMR} + NOCOLOR
-      action = EMW + route.defaults[:action].to_s.ljust(max_widths[:actions]) + NOCOLOR
-
-      puts "#{name} | #{verb} | #{path} | #{action}"
+    all_routes.group_by {|route| route.defaults[:controller]}.each_value do |group|
+        print "Controller: ".light_white
+        puts "#{group.first.defaults[:controller].to_s}".cyan
     end
-  end
+
+  #all_routes.group_by { |route| route.defaults[:controller] }.each_value do |group|
+#    puts EMK + "\nCONTROLLER: " + EMW + group.first.defaults[:controller].to_s + NOCOLOR
+#    group.each do |route|
+#      name = EMC + route.name.to_s.rjust(max_widths[:names]) + NOCOLOR
+#      verb = EMY + route.verb.inspect.gsub(/^.{2}|.{2}$/, "").center(max_widths[:verbs]) + NOCOLOR
+#      path = EMR + route.path.spec.to_s.ljust(max_widths[:paths]).gsub(/\.?:\w+/){|s|EMB + s + EMR} + NOCOLOR
+#      action = EMW + route.defaults[:action].to_s.ljust(max_widths[:actions]) + NOCOLOR
+#
+#      puts "#{name} | #{verb} | #{path} | #{action}"
+#    end
+#  end
 end
