@@ -35,7 +35,7 @@ task :color_routes => :environment do
             path = route.path.spec.to_s.ljust(max_widths[:paths]).gsub("(.:format)","")
             print "#{path.split('/').map{|p| p.light_yellow}.join('/'.red)}"
 
-            print "\n         | ".light_white
+            print " | ".light_white
 
             # CONTROLLER ACTIONS
             print "#{route.name.to_s.ljust(max_widths[:names])}".light_blue
