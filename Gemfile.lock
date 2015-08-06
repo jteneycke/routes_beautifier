@@ -1,0 +1,22 @@
+PATH
+  remote: .
+  specs:
+    colorized_routes (0.1.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    colorize (0.7.7)
+    rake (10.4.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bundler (~> 1.10)
+  colorize (~> 0.7)
+  colorized_routes!
+  rake (~> 10.0)
+
+BUNDLED WITH
+   1.10.4
