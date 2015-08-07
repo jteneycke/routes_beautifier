@@ -25,7 +25,7 @@
 
       routes.each do |route|
         types.each do |type|
-          widths[type] = widths[type] < route.send(type) ? widths[type] : route.send(type)
+          widths[type] = widths[type] < route.send(type).length ? widths[type] : route.send(type).length
         end
       end
 
