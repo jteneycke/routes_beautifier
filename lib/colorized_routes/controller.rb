@@ -26,7 +26,13 @@
       end
       print "#{Array(0..space_counter).map{|s| " "}.join}"
       print "Controller: ".light_white
-      puts " #{@name} ".light_white.on_blue.bold
+      if @namespaces.any?
+        print " #{@name} ".light_white.on_blue.bold
+        print " => ".light_white
+        puts " #{[@namespaces.join("/"),@name].join("/")} ".light_white.on_blue.bold
+      else
+        puts " #{@name} ".light_white.on_blue.bold
+      end
     end
   end
 #end
