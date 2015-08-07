@@ -2,8 +2,6 @@ desc 'Makes routes a little more pretty.'
 
 
 task :routes do
-  require 'colorized_routes/controller'
-  require 'colorized_routes/route'
   puts  "                                                              ".light_white.on_blue
   puts  "                       COLORIZED ROUTES                       ".light_white.on_blue
   puts  "    github: https://github.com/joshtate04/colorized_routes    ".light_white.on_blue
@@ -52,6 +50,8 @@ task :routes do
 end
 
 task :colorized_routes => :environment do
+  require 'colorized_routes/controller'
+  require 'colorized_routes/route'
   Rails.application.reload_routes!
   all_routes = Rails.application.routes.routes.to_a
   all_routes.reject! { |route| route.verb.nil? || route.path.spec.to_s == '/assets' }
