@@ -66,7 +66,8 @@ task :colorized_routes => :environment do
       routes.push Route.new(
                       route.verb.inspect.gsub(/^.{2}|.{2}$/, ""),
                       route.path.spec.to_s.gsub("(.:format)",""),
-                      route.name.to_s,route[:defaults].action.to_s
+                      route.name.to_s,
+                      route.defaults[:action].to_s
                   )
     end
     controllers.push(Controller.new(routes,group.first.defaults[:controller].to_s))
