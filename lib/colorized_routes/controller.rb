@@ -14,7 +14,7 @@
       @routes = routes
     end
 
-    def display
+    def display widths
       space_counter = 0
       if @namespaces.any?
         @namespaces.each do |ns|
@@ -33,7 +33,7 @@
       else
         puts " #{@name} ".light_white.on_blue.bold
       end
-      @routes.each {|r| r.display}
+      @routes.each {|r| r.display(widths)}
 
       puts ""
     end

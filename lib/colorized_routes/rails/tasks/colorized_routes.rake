@@ -73,5 +73,6 @@ task :colorized_routes => :environment do
     controllers.push(Controller.new(routes,group.first.defaults[:controller].to_s))
   end
 
-  controllers.each {|c| c.display}
+  widths = Route.max_widths(routes)
+  controllers.each {|c| c.display(widths)}
 end
