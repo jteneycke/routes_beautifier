@@ -1,4 +1,4 @@
-module ColorizedRoutes
+#module ColorizedRoutes
   class Route
     # The route will hold all the information for the path, action name, etc
 
@@ -48,4 +48,4 @@ module ColorizedRoutes
       @action
     end
   end
-end
+#end

@@ -1,4 +1,4 @@
-module ColorizedRoutes
+#module ColorizedRoutes
   class Controller
     # The controller will have many routes
 
@@ -29,4 +29,4 @@ module ColorizedRoutes
       puts " #{name} ".light_white.on_blue.bold
     end
   end
-end
+#end
