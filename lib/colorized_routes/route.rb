@@ -16,7 +16,7 @@
       print " | ".light_white
       print "#{@prefix.ljust(widths[:prefix])}".yellow
       print " | ".light_white
-      print "#{@action}".light_green
+      print "#{@action}\n".light_green
     end
 
     def self.max_widths routes, existing_widths = nil
@@ -25,7 +25,7 @@
 
       routes.each do |route|
         types.each do |type|
-          widths[type] = widths[type] < route.send(type).length ? widths[type] : route.send(type).length
+          widths[type] = widths[type] < route.send(type).length ? route.send(type).length : widths[type]
         end
       end
 
