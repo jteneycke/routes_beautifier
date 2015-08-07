@@ -17,7 +17,7 @@
       print "#{@prefix.ljust(widths[:prefix])}".yellow
       print " | ".light_white
       print "#{@action}\n".light_green
-      puts "#{@verb.length.light_red} | #{@path.light_blue} | #{@prefix.yellow} | #{@action.light_green}"
+      puts "#{@verb.light_red} | #{@path.light_blue} | #{@prefix.yellow} | #{@action.light_green}"
     end
 
     def self.max_widths routes, existing_widths = nil
