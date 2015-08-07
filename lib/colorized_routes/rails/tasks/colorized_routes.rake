@@ -1,4 +1,6 @@
 desc 'Makes routes a little more pretty.'
+include 'colorized_routes/controller'
+include 'colorized_routes/route'
 
 task :routes do
   puts  "                                                              ".light_white.on_blue
@@ -60,9 +62,9 @@ task :colorized_routes => :environment do
   all_routes.group_by {|route| route.defaults[:controller]}.each_value do |group|
     routes = []
     group.each do |route|
-      routes.push ColorizedRoutes::Route.new(route.verb.inspect.gsub(/^.{2}|.{2}$/, ""),route.path.spec.to_s.gsub("(.:format)",""),route.name.to_s,route[:defaults].action.to_s)
+      routes.push Route.new(route.verb.inspect.gsub(/^.{2}|.{2}$/, ""),route.path.spec.to_s.gsub("(.:format)",""),route.name.to_s,route[:defaults].action.to_s)
     end
-    controllers.push(ColorizedRoutes::Controller.new(routes,group.first.defaults[:controller].to_s))
+    controllers.push(Controller.new(routes,group.first.defaults[:controller].to_s))
   end
 
   controllers.each {|c| c.display}
