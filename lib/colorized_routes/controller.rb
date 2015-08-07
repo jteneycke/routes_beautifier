@@ -18,13 +18,17 @@
       space_counter = 0
       if @namespaces.any?
         @namespaces.each do |ns|
-          print "#{Array(0..space_counter).map{|s| " "}.join}"
+          unless space_counter == 0
+            print "#{Array(1..space_counter).map{|s| " "}.join}"
+          end
           print "Namespace: ".light_white
           puts " #{ns} ".light_white.on_light_red.bold
           space_counter += 1
         end
       end
-      print "#{Array(0..space_counter).map{|s| " "}.join}"
+      unless space_counter == 0
+        print "#{Array(1..space_counter).map{|s| " "}.join}"
+      end
       print "Controller: ".light_white
       if @namespaces.any?
         print " #{@name} ".light_white.on_blue.bold
