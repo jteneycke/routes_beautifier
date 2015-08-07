@@ -59,7 +59,7 @@ task :colorized_routes => :environment do
 
   all_routes.group_by {|route| route.defaults[:controller]}.each_value do |group|
     routes = []
-    group.eaech do |route|
+    group.each do |route|
       routes.push Route.new(route.verb.inspect.gsub(/^.{2}|.{2}$/, ""),route.path.spec.to_s.gsub("(.:format)",""),route.name.to_s,route[:defaults].action.to_s)
     end
     controllers.push(Controller.new(routes,group.first.defaults[:controller].to_s))
