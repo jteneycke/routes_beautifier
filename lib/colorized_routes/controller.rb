@@ -33,6 +33,9 @@
       else
         puts " #{@name} ".light_white.on_blue.bold
       end
+      @routes.each {|r| r.display}
+
+      puts ""
     end
   end
 #end
