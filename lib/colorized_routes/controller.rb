@@ -14,7 +14,7 @@
       @routes = routes
     end
 
-    def display widths
+    def display widths, print_routes=true
       space_counter = 0
       if @namespaces.any?
         @namespaces.each do |ns|
@@ -37,7 +37,9 @@
       else
         puts " #{@name} ".light_white.on_blue.bold
       end
-      @routes.each {|r| r.display(widths)}
+      if print_routes
+        @routes.each {|r| r.display(widths)}
+      end
 
       puts ""
     end

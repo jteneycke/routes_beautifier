@@ -38,6 +38,8 @@ task :routes do
   controllers.each {|c| c.display(widths)}
 end
 
-task :colorized_routes => :environment do
-
+namespace :routes do
+  task :search => [:search_term] do
+    puts "SEARCH: ".yellow + search_term.light_red
+  end
 end
