@@ -45,4 +45,8 @@ class Route
   def action
     @action
   end
+
+  def contains_search_term search_term
+    verb.include?(search_term) || path.include?(search_term) || prefix.include?(search_term) || action.include?(search_term)
+  end
 end

@@ -43,6 +43,20 @@ class Controller
     puts ""
   end
 
+  def name
+    @name
+  end
+
+  def namespaces
+    @namespaces
+  end
+
+  def full_name
+    dup_namespaces = namespaces.clone
+    dup_namespaces.push name
+    dup_namespaces.join("/")
+  end
+
   def self.build_routes all_routes
     all_routes.reject! { |route| route.verb.nil? || route.path.spec.to_s == '/assets' }
     all_routes.select! { |route| ENV['CONTROLLER'].nil? || route.defaults[:controller].to_s == ENV['CONTROLLER'] }
@@ -69,6 +83,39 @@ class Controller
   end
 
   def self.search search_term, controllers
-    puts "searching: #{search_term}".light_red
+    if search_term.include?(" ")
+      terms = search_term.split(" ").count
+      search_term = search_term.split(" ").first
+      puts "ColorizedRoutes only searches for the first term in a string (#{search_term})".red if terms > 1
+    end
+
+    found = 0
+    print "FOUND: "
+    print " 0 ".white.on_blue
+    print "\r"
+
+    flagged_controllers = Hash.new
+
+    controllers.each do |controller|
+      if controller.full_name.include?(search_term)
+        flagged_controllers[controller.full_name] = controller.routes
+        print "FOUND: "
+        print " #{found += 1} ".white.on_blue
+        print "\r"
+        sleep 1
+      else
+        flagged_routes = []
+        controller.routes.each do |route|
+          if route.contains_search_term(search_term)
+            flagged_routes.push route
+            print "FOUND: "
+            print " #{found += 1} ".white.on_blue
+            print "\r"
+            sleep 1
+          end
+        end
+        flagged_controllers[controller.full_name] = flagged_routes if flagged_routes.any?
+      end
+    end
   end
 end
