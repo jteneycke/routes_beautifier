@@ -16,8 +16,8 @@ task :routes do
   Rake::Task['routes'].clear
   Rails.application.reload_routes!
   controllers = Controller.build_routes(Rails.application.routes.routes.to_a)
-
-  options = {}
+  search_term = nil
+  
   OptionParser.new do |opts|
     opts.banner = "Usage: rake routes [search]"
     opts.on("-s", "-s [SEARCH_TERM]") do |search|
