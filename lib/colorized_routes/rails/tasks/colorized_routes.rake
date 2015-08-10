@@ -20,7 +20,7 @@ task :routes do
   options = {}
   OptionParser.new do |opts|
     opts.banner = "Usage: rake routes [search]"
-    opts.on("-s", "--search [SEARCH_TERM]") do |search|
+    opts.on("--search", "--search [SEARCH_TERM]") do |search|
       search_term.search = search
     end
   end.parse!
