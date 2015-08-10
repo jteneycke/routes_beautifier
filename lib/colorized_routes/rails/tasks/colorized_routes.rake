@@ -4,6 +4,8 @@ desc 'Makes routes a little more pretty.'
 task :routes do
   require 'colorized_routes/controller'
   require 'colorized_routes/route'
+  require 'optparse'
+
   puts "                                                              ".light_white.on_blue
   puts "                       COLORIZED ROUTES                       ".light_white.on_blue
   puts "    github: https://github.com/joshtate04/colorized_routes    ".light_white.on_blue
@@ -13,33 +15,19 @@ task :routes do
 
   Rake::Task['routes'].clear
   Rails.application.reload_routes!
-  all_routes = Rails.application.routes.routes.to_a
-  all_routes.reject! { |route| route.verb.nil? || route.path.spec.to_s == '/assets' }
-  all_routes.select! { |route| ENV['CONTROLLER'].nil? || route.defaults[:controller].to_s == ENV['CONTROLLER'] }
+  controllers = Controller.build_routes(Rails.application.routes.routes.to_a)
 
-
-  controllers = []
-  widths = nil
-
-  all_routes.group_by {|route| route.defaults[:controller]}.each_value do |group|
-    routes = []
-    group.each do |route|
-      routes.push Route.new(
-                      route.verb.inspect.gsub(/^.{2}|.{2}$/, ""),
-                      route.path.spec.to_s.gsub("(.:format)",""),
-                      route.name.to_s,
-                      route.defaults[:action].to_s
-                  )
+  options = {}
+  OptionParser.new do |opts|
+    opts.banner = "Usage: rake routes [search]"
+    opts.on("-s", "--search [SEARCH_TERM]") do |search|
+      search_term.search = search
     end
-    widths = Route.max_widths(routes,widths)
-    controllers.push(Controller.new(routes,group.first.defaults[:controller].to_s))
-  end
+  end.parse!
 
-  controllers.each {|c| c.display(widths)}
-end
-
-namespace :routes do
-  task :search => [:search_term] do
-    puts "SEARCH: ".yellow + search_term.light_red
+  if search_term.present?
+    search_results = Controller.search(search_term, controllers)
+  else
+    controllers.each {|c| c.display(widths)}
   end
 end
