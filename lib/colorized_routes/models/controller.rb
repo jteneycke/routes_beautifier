@@ -131,7 +131,7 @@ class Controller
 
   private
 
-  def print_totals searched, found
+  def self.print_totals searched, found
     print "\r"
     print "FOUND: "
     print " #{found} ".white.on_blue
