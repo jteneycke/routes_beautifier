@@ -105,30 +105,37 @@ class Controller
     flagged_controllers = Hash.new
 
     controllers.each do |controller|
+      searched += 1
       if controller.full_name.include?(search_term)
         flagged_controllers[controller.full_name] = controller.routes
-        print "FOUND: "
-        print " #{found += 1} ".white.on_blue
-        print " | SEARCHED: "
-        print " #{searched += 1} ".white.on_green
-        print "\r"
-        sleep 1
+        found += 1
+        print_totals(searched, found)
       else
+        print_totals(searched, found)
         flagged_routes = []
         controller.routes.each do |route|
+          searched += 1
           if route.contains_search_term(search_term)
+            found += 1
             flagged_routes.push route
-            print "\r"
-            print "FOUND: "
-            print " #{found += 1} ".white.on_blue
-            print " | SEARCHED: "
-            print " #{searched += 1} ".white.on_green
+            print_totals(searched, found)
           end
+          print_totals(searched, found)
           sleep 1
         end
         flagged_controllers[controller.full_name] = flagged_routes if flagged_routes.any?
       end
     end
     puts ""
+  end
+
+  private
+
+  def print_totals searched, found
+    print "\r"
+    print "FOUND: "
+    print " #{found} ".white.on_blue
+    print " | SEARCHED: "
+    print " #{searched} ".white.on_green
   end
 end
