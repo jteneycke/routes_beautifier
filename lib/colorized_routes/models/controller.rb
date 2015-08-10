@@ -94,6 +94,7 @@ class Controller
     end
 
     found = 0
+    searched = 0
     print "FOUND: "
     print " 0 ".white.on_blue
     print "\r"
@@ -105,6 +106,8 @@ class Controller
         flagged_controllers[controller.full_name] = controller.routes
         print "FOUND: "
         print " #{found += 1} ".white.on_blue
+        print " | SEARCHED: "
+        print " #{searched += 1} ".white.on_green
         print "\r"
         sleep 1
       else
@@ -114,12 +117,15 @@ class Controller
             flagged_routes.push route
             print "FOUND: "
             print " #{found += 1} ".white.on_blue
+            print " | SEARCHED: "
+            print " #{searched += 1} ".white.on_green
             print "\r"
-            sleep 1
           end
+          sleep 1
         end
         flagged_controllers[controller.full_name] = flagged_routes if flagged_routes.any?
       end
     end
+    puts ""
   end
 end
