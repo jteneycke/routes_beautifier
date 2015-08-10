@@ -51,6 +51,10 @@ class Controller
     @namespaces
   end
 
+  def routes
+    @routes
+  end
+
   def full_name
     dup_namespaces = namespaces.clone
     dup_namespaces.push name
