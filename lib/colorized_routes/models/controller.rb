@@ -95,9 +95,12 @@ class Controller
 
     found = 0
     searched = 0
+
+    print "\n\r"
     print "FOUND: "
     print " 0 ".white.on_blue
-    print "\r"
+    print " | SEARCHED: "
+    print " 0 ".white.on_green
 
     flagged_controllers = Hash.new
 
@@ -115,11 +118,11 @@ class Controller
         controller.routes.each do |route|
           if route.contains_search_term(search_term)
             flagged_routes.push route
+            print "\r"
             print "FOUND: "
             print " #{found += 1} ".white.on_blue
             print " | SEARCHED: "
             print " #{searched += 1} ".white.on_green
-            print "\r"
           end
           sleep 1
         end
