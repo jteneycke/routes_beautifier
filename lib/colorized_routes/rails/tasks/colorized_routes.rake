@@ -2,8 +2,8 @@ desc 'Makes routes a little more pretty.'
 
 
 task :routes do
-  require 'colorized_routes/controller'
-  require 'colorized_routes/route'
+  require 'colorized_routes/models/route'
+  require 'colorized_routes/models/controller'
   require 'optparse'
 
   puts "                                                              ".light_white.on_blue
