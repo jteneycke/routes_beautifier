@@ -21,7 +21,7 @@ gem 'routes_beautifier'
 ```
 then run
 ```bash
-bundle
+bundle install
 ```
 
 run the routes rake task to get your routes beautified!
