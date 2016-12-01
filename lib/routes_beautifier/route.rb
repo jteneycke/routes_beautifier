@@ -1,4 +1,4 @@
-#module ColorizedRoutes
+#module RoutesBeautifier
   class Route
     # The route will hold all the information for the path, action name, etc
 

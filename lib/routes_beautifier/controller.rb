@@ -1,4 +1,4 @@
-#module ColorizedRoutes
+#module RoutesBeautifier
   class Controller
     # The controller will have many routes
 

@@ -2,11 +2,11 @@ desc 'Makes routes a little more pretty.'
 
 
 task :routes do
-  require 'colorized_routes/controller'
-  require 'colorized_routes/route'
+  require 'routes_beautifier/controller'
+  require 'routes_beautifier/route'
   puts "                                                              ".white.on_blue
-  puts "                       COLORIZED ROUTES                       ".white.on_blue
-  puts "    github: https://github.com/joshtate04/colorized_routes    ".white.on_blue
+  puts "                       Routes Beautifier                      ".white.on_blue
+  puts "    github: https://github.com/kbeaulieu802/routes_beautifier ".white.on_blue
   puts "                                                              ".white.on_blue
   puts ""
 
@@ -38,6 +38,6 @@ task :routes do
   controllers.each {|c| c.display(widths)}
 end
 
-task :colorized_routes => :environment do
+task :routes_beautifier => :environment do
 
 end
