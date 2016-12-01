@@ -4,6 +4,8 @@ desc 'Makes routes a little more pretty.'
 task :routes do
   require 'routes_beautifier/controller'
   require 'routes_beautifier/route'
+  require 'colorize'
+  require 'colorized_string'
   puts "                                                              ".white.blue
   puts "                       Routes Beautifier                      ".white.blue
   puts "    github: https://github.com/kbeaulieu802/routes_beautifier ".white.blue
