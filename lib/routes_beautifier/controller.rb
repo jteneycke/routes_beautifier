@@ -22,7 +22,7 @@
             print "#{Array(1..space_counter).map{|s| " "}.join}"
           end
           print "Namespace: ".white
-          puts " #{ns} ".white.red.bold
+          puts " #{ns} ".white.red
           space_counter += 1
         end
       end
@@ -31,11 +31,11 @@
       end
       print "Controller: ".white
       if @namespaces.any?
-        print " #{@name} ".white.blue.bold
+        print " #{@name} ".white.blue
         print " => ".white
-        puts " #{[@namespaces.join("/"),@name].join("/")} ".white.blue.bold
+        puts " #{[@namespaces.join("/"),@name].join("/")} ".white.blue
       else
-        puts " #{@name} ".white.blue.bold
+        puts " #{@name} ".white.blue
       end
       @routes.each {|r| r.display(widths)}
 
