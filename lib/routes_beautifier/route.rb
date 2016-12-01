@@ -10,7 +10,7 @@
     end
 
     def display widths
-      print "#{@verb.center(widths[:verb])}".red
+      print "#{@verb.center(:verb)}".red
       print " | ".white
       print "#{@path.ljust(widths[:path]).split('/').map{|p| p.blue}.join('/'.green)}"
       print " | ".white
