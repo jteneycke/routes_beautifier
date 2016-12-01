@@ -31,11 +31,11 @@
       end
       print "Controller: ".white
       if @namespaces.any?
-        print " #{@name} ".white.on_blue.bold
+        print " #{@name} ".white.blue.bold
         print " => ".white
-        puts " #{[@namespaces.join("/"),@name].join("/")} ".white.on_blue.bold
+        puts " #{[@namespaces.join("/"),@name].join("/")} ".white.blue.bold
       else
-        puts " #{@name} ".white.on_blue.bold
+        puts " #{@name} ".white.blue.bold
       end
       @routes.each {|r| r.display(widths)}
 
