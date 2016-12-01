@@ -22,7 +22,7 @@
             print "#{Array(1..space_counter).map{|s| " "}.join}"
           end
           print "Namespace: ".white
-          puts " #{ns} ".white.on_light_red.bold
+          puts " #{ns} ".white.red.bold
           space_counter += 1
         end
       end
