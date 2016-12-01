@@ -4,10 +4,10 @@ desc 'Makes routes a little more pretty.'
 task :routes do
   require 'colorized_routes/controller'
   require 'colorized_routes/route'
-  puts "                                                              ".light_white.on_blue
-  puts "                       COLORIZED ROUTES                       ".light_white.on_blue
-  puts "    github: https://github.com/joshtate04/colorized_routes    ".light_white.on_blue
-  puts "                                                              ".light_white.on_blue
+  puts "                                                              ".white.on_blue
+  puts "                       COLORIZED ROUTES                       ".white.on_blue
+  puts "    github: https://github.com/joshtate04/colorized_routes    ".white.on_blue
+  puts "                                                              ".white.on_blue
   puts ""
 
 

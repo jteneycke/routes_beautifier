@@ -11,11 +11,11 @@
 
     def display widths
       print "#{@verb.center(widths[:verb])}".light_red
-      print " | ".light_white
+      print " | ".white
       print "#{@path.ljust(widths[:path]).split('/').map{|p| p.light_blue}.join('/'.green)}"
-      print " | ".light_white
+      print " | ".white
       print "#{@prefix.ljust(widths[:prefix])}".yellow
-      print " | ".light_white
+      print " | ".white
       print "#{@action}".light_green
       puts ""
     end

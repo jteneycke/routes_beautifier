@@ -21,21 +21,21 @@
           unless space_counter == 0
             print "#{Array(1..space_counter).map{|s| " "}.join}"
           end
-          print "Namespace: ".light_white
-          puts " #{ns} ".light_white.on_light_red.bold
+          print "Namespace: ".white
+          puts " #{ns} ".white.on_light_red.bold
           space_counter += 1
         end
       end
       unless space_counter == 0
         print "#{Array(1..space_counter).map{|s| " "}.join}"
       end
-      print "Controller: ".light_white
+      print "Controller: ".white
       if @namespaces.any?
-        print " #{@name} ".light_white.on_blue.bold
-        print " => ".light_white
-        puts " #{[@namespaces.join("/"),@name].join("/")} ".light_white.on_blue.bold
+        print " #{@name} ".white.on_blue.bold
+        print " => ".white
+        puts " #{[@namespaces.join("/"),@name].join("/")} ".white.on_blue.bold
       else
-        puts " #{@name} ".light_white.on_blue.bold
+        puts " #{@name} ".white.on_blue.bold
       end
       @routes.each {|r| r.display(widths)}
 
