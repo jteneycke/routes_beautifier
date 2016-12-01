@@ -1,39 +1,30 @@
-ColorizedRoutes
+Routes Beautifier
 ===========
-[![Gem Version](https://badge.fury.io/rb/colorized_routes.svg)](http://badge.fury.io/rb/colorized_routes)
 # DESCRIPTION
 
-ColorizedRoutes is a small library to make the rake routes command more readable.
+Routes Beautifier makes rake routes more readable.
 
 Enjoy!
 
-Based on the work at: https://github.com/nicooga/color_routes
+Based on the work at: https://github.com/jt-platterz/colorized_routes
 
 SUPPORTED VERSIONS: 4.x
 
 # INSTALLATION
 ```bash
-gem install colorized_routes
+gem install routes_beautifier
 ```
 or
 ```ruby
 # In your Gemfile
-gem 'colorized_routes'
+gem 'routes_beautifier'
 ```
 then run
 ```bash
 bundle
 ```
 
-run the routes rake task to get your colorized routes
+run the routes rake task to get your routes beautified!
 ```bash
 rake routes
 ```
-
-# DEMO
-
-####rake routes normal output:
-<img src="https://imgur.com/BeKHDbB.png" title="Example output" alt="Example output" />
-
-####colorized rake routes output:
-<img src="https://imgur.com/EFy1BWc.png" title="Example output" alt="Example output" />
