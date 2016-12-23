@@ -10,9 +10,9 @@
     end
 
     def display widths
-      print "#{@verb.center()}".red
+      print "#{@verb.center(20)}".magenta
       print " | ".white
-      print "#{@path.ljust(widths[:path]).split('/').map{|p| p.blue}.join('/'.green)}"
+      print "#{@path.ljust(widths[:path]).split('/').map{|p| p.start_with?(":") ? p.light_magenta : p.blue }.join('/'.green)}"
       print " | ".white
       print "#{@prefix.ljust(widths[:prefix])}".yellow
       print " | ".white
