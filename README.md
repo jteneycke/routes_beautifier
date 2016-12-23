@@ -10,6 +10,9 @@ Based on the work at: https://github.com/jt-platterz/colorized_routes
 
 SUPPORTED VERSIONS: 4.x
 
+# PREVIEW
+![Screenshot](colors.png)
+
 # INSTALLATION
 ```bash
 gem install routes_beautifier
