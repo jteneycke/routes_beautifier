@@ -1,10 +1,7 @@
 Routes Beautifier
 ===========
-# DESCRIPTION
 
 Routes Beautifier makes rake routes more readable.
-
-Enjoy!
 
 Based on the work at: https://github.com/jt-platterz/colorized_routes
 
