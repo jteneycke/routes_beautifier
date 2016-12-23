@@ -17,7 +17,7 @@ gem install routes_beautifier
 or
 ```ruby
 # In your Gemfile
-gem 'routes_beautifier'
+gem 'routes_beautifier', git: "https://github.com/jteneycke/routes_beautifier.git"
 ```
 then run
 ```bash
