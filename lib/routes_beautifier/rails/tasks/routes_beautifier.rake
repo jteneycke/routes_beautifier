@@ -28,6 +28,13 @@ task :routes do
   end.each_value do |group|
     routes = []
     group.each do |route|
+
+      #def initialize(verb, path, prefix, action)
+        #@verb   = verb
+        #@path   = path
+        #@prefix = prefix
+        #@action = action
+      #end
       routes.push Route.new(
                       route.verb.inspect.gsub(/^.{2}|.{2}$/, ""),
                       route.path.spec.to_s.gsub("(.:format)",""),
