@@ -1,5 +1,6 @@
 desc 'Makes routes a little more pretty.'
 task :routes do
+  require 'awesome_print'
   require 'colorize'
   require 'colorized_string'
 
@@ -28,7 +29,7 @@ task :routes do
       prefix: route.name.to_s,
       action: route.defaults[:action].to_s
     }
-    puts route
+    ap(route)
     end
   end
 end
