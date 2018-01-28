@@ -9,6 +9,8 @@ task :routes do
 
   Rails.application.reload_routes!
 
+  output = []
+
   Rails
     .application
     .routes
@@ -25,13 +27,17 @@ task :routes do
     end.each_value do |group|
       group.each do |route|
         route = {
-          verb:   route.verb.inspect.gsub(/^.{2}|.{2}$/, ""),
-          path:   route.path.spec.to_s.gsub("(.:format)",""),
-          prefix: route.name.to_s,
-          action: route.defaults[:action].to_s
+          verb:         route.verb.inspect.gsub(/^.{2}|.{2}$/, ""),
+          path:         route.path.spec.to_s.gsub("(.:format)",""),
+          rails: {
+            controller: route.defaults[:controller].to_s,
+            method:     route.defaults[:action].to_s
+          }
         }
-        ap(route)
+        output << route
       end
     end
 
+    ap(output, index: false)
+    puts output.count
 end
